@@ -37,6 +37,7 @@ class Graph:
         return dist
 
 if __name__ == '__main__':
+    # Reading input files and split to find source, destination and weight to create edges
     with open('graphInput.txt', 'r') as f:
         lines = f.readlines()
         V = lines[0]
@@ -45,6 +46,7 @@ if __name__ == '__main__':
             s, d, w = line.split()
             g.add_edge(int(s), int(d), int(w))
         
+        # Read source and destination to find shortest path by Calling Bellman Ford Algorithm
         with open('shortestPaths.txt', 'r') as sf:
             shortest_path_lines = sf.readlines()
             for line in shortest_path_lines:
